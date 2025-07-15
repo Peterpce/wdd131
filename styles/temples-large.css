@@ -1,0 +1,15 @@
+@media screen and (min-width: 768px) {
+  #menu-button {
+    display: none;
+  }
+
+  nav {
+    display: flex !important;
+    justify-content: right;
+    background: #0d2a4a;
+  }
+
+ .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
