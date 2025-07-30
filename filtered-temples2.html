@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filtered Temples</title>
+  <link rel="stylesheet" href="styles/filtered-temples.css">
+</head>
+<body>
+  <header>
+    <h1>Temples</h1>
+    <nav>
+      <button onclick="filterTemples('all')">All</button>
+      <button onclick="filterTemples('utah')">Utah</button>
+      <button onclick="filterTemples('non-utah')">Non-Utah</button>
+    </nav>
+  </header>
+
+  <main>
+    <div id="temples-container" class="temple-grid"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Filtered Temples Page</p>
+  </footer>
+
+  <script src="scripts/filtered-temples.js"></script>
+</body>
+</html>
