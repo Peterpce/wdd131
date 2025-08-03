@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Review Submitted</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/form.css">
+</head>
+<body>
+  <main>
+    <h1>Thank you for your review!</h1>
+    <p>You have submitted <span id="reviewCount">0</span> reviews.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 | Your Name | WDD 131</p>
+  </footer>
+
+  <script>
+    const reviewCount = localStorage.getItem("reviewCount") || 0;
+    const newCount = parseInt(reviewCount) + 1;
+    localStorage.setItem("reviewCount", newCount);
+    document.getElementById("reviewCount").textContent = newCount;
+  </script>
+</body>
+</html>
+
