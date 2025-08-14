@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Tourist Destinations in Akwa Ibom State" />
+  <title>Destinations - Akwa Ibom Tourism</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">Akwa Ibom Tourism</div>
+    <button id="menu-toggle" aria-label="Toggle Menu">☰</button>
+    <nav id="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="destination.html" class="active">Destinations</a>
+      <a href="culture.html">Culture</a>
+      <a href="references.html">References</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Explore Tourist Destinations</h1>
+      <p>Discover unique places across Akwa Ibom State for culture, history, and relaxation.</p>
+    </section>
+
+    <section>
+      <div class="filter-buttons">
+        <button data-category="all" class="active">All</button>
+        <button data-category="beach">Beach</button>
+        <button data-category="historic">Historic</button>
+        <button data-category="city">City</button>
+      </div>
+
+      <div class="cards" id="destination-cards">
+        <!-- Dynamic destination cards will be injected here -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p id="greeting"></p>
+    <p>&copy; <span id="year"></span> Peter Ekanem 🌺 Akwa Ibom Cultural Tourism</p>
+    <p>Last Modification: <span id="lastModified"></span></p>
+  </footer>
+
+  <script src="scripts/destination.js"></script>
+</body>
+</html>

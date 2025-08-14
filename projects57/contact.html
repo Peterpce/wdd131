@@ -1,0 +1,158 @@
+<!--DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us – Akwa Ibom Cultural Tourism</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Akwa Ibom Cultural Tourism</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="culture.html">Culture</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="references.html">References</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Contact Us</h2>
+      <p>If you have questions, suggestions, or feedback, we’d love to hear from you! Fill out the form below, and we’ll respond promptly.</p>
+
+      <form id="contact-form">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required />
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <div id="confirmation" style="display:none;">
+        <p>Thank you! Your message has been sent successfully.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Peter Ekanem | Akwa Ibom Cultural Tourism</p>
+    <p><a href="references.html">References</a></p>
+  </footer>
+
+  <!- Optional future script ->
+  <script src="scripts/contact.js"></script>
+
+</body>
+</html-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us – Akwa Ibom Cultural Tourism</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Akwa Ibom Cultural Tourism</h1>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <nav>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="culture.html">Culture</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="references.html">References</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Contact Us</h2>
+      <p>If you have questions or feedback, we’d love to hear from you!</p>
+
+      <form id="contact-form">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required />
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <div id="confirmation"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Peter Ekanem | Akwa Ibom Cultural Tourism</p>
+    <p><a href="references.html">References</a></p>
+  </footer>
+
+  <!-- Hamburger Script -->
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById("nav-links");
+      navLinks.classList.toggle("show");
+    }
+  </script>
+
+  <!-- Contact Form Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("contact-form");
+      const confirmation = document.getElementById("confirmation");
+
+      confirmation.style.display = "none";
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const name = document.getElementById("fullname").value;
+        const email = document.getElementById("email").value;
+        const subject = document.getElementById("subject").value;
+        const message = document.getElementById("message").value;
+
+        let count = localStorage.getItem("formSubmissions");
+        count = count ? parseInt(count) + 1 : 1;
+        localStorage.setItem("formSubmissions", count);
+
+        form.reset();
+
+        confirmation.innerHTML = `<p>Thank you, ${name}! Your message has been sent successfully. This is submission #${count}.</p>`;
+        confirmation.style.display = "block";
+      });
+    });
+  </script>
+
+</body>
+</html>
